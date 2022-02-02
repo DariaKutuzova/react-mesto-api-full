@@ -96,7 +96,7 @@ class Api{
 
 //Экземпляр API
 const api= new Api({
-    url: "https://mesto.nomoreparties.co/v1/cohort-29/",
+    url: "http://kutuzova.mesto.students.nomoredomains.work/",
     headers: {
         "content-type": "application/json",
         authorization: "8bc97cc4-e8dd-4b97-8e8e-b29acddab317"
