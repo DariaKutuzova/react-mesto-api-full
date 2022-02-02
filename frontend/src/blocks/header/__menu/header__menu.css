@@ -1,0 +1,16 @@
+.header__menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 0;
+    min-height: 120px;
+    align-items: center;
+    border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+    transition: all ease 1s;
+}
+
+@media screen and (min-width: 601px) {
+    .header__menu {
+        display: none;
+    }
+}

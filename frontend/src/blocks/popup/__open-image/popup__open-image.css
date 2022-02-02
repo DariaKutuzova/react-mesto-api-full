@@ -1,0 +1,6 @@
+.popup__open-image {
+  max-width: 80%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}

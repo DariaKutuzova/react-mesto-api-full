@@ -1,0 +1,7 @@
+.popup__container_type_tooltip{
+    min-height: 330px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

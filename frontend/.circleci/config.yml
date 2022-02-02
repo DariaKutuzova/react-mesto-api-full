@@ -1,0 +1,28 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: cimg/node:14.18.0
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run-script predeploy
+  test:
+    docker:
+      - image: cimg/node:14.18.0
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run-script test
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test

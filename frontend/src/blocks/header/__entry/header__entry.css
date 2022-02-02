@@ -1,0 +1,14 @@
+.header__entry {
+    font-size: 18px;
+    line-height: 22px;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 600px) {
+    .header__entry{
+    display: none;
+}
+}

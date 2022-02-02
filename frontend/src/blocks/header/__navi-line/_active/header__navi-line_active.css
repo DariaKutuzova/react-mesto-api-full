@@ -1,0 +1,18 @@
+.header__navi-line_active {
+    background: none;
+
+}
+
+.header__navi-line_active::before, .header__navi-line_active::after {
+    transition-delay: 0s, 0.3s;
+}
+
+.header__navi-line_active::before {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+.header__navi-line_active::after {
+    bottom: 0;
+    transform: rotate(45deg);
+}

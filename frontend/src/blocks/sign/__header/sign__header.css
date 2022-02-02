@@ -1,0 +1,11 @@
+.sign__header {
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 60px;
+}
+
+@media screen and (max-width: 400px) {
+    .sign__header {
+        margin-top: 40px;
+    }
+}

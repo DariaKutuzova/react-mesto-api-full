@@ -1,0 +1,11 @@
+.element__caption {
+  min-height: 79px;
+  background-color: #FFFFFF;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0 0 10px 10px;
+  padding-right: 21px;
+  padding-left: 15px;
+}

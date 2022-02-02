@@ -1,0 +1,11 @@
+.sign__input {
+    background-color: #000;
+    color: #fff;
+    border-bottom-color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+    .sign__input {
+        margin-top: 40px;
+    }
+}

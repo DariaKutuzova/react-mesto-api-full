@@ -1,0 +1,26 @@
+.header__basic {
+    padding-top: 45px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+    min-height: 74px;
+
+}
+
+@media screen and (max-width: 910px) {
+    .header__basic {
+        padding-top: 28px;
+        padding-left: 27px;
+        padding-right: 27px;
+        min-height: 56px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header__basic {
+        padding-top: 0;
+        min-height: 83px;
+    }
+}

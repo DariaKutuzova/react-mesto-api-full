@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="popup popup_type_confirm popup_opened"
+  onClick={[Function]}
+>
+  <div
+    className="popup__container popup__container_type_confirm"
+  >
+    <form
+      action="#"
+      className="popup__form popup__form_type_confirm"
+      name="confirm"
+      onSubmit={[Function]}
+    >
+      <h2
+        className="popup__form-header"
+      >
+        Вы уверены?
+      </h2>
+      <button
+        className="popup__button "
+        type="submit"
+      />
+    </form>
+    <button
+      aria-label="Закрыть"
+      className="popup__close popup__close_type_confirm"
+      onClick={[Function]}
+      type="button"
+    />
+  </div>
+</div>
+`;

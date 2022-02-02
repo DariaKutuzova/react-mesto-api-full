@@ -1,0 +1,10 @@
+.sign__link {
+    color: #FFFFFF;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.2s linear;
+}
+
+.sign__link:hover {
+    opacity: 0.6;
+}
