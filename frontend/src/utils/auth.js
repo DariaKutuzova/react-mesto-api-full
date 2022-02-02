@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://auth.nomoreparties.co'
+export const BASE_URL = 'https://kutuzova.mesto.students.nomoredomains.work'
 
 function handleResponse(res) {
     if (res.ok) {
