@@ -2,6 +2,8 @@ const allowedCors = [
   'http://localhost:3000',
   'http://kutuzova.mesto.students.nomoredomains.work',
   'https://kutuzova.mesto.students.nomoredomains.work',
+  'http://a.kutuzova.mesto.students.nomoredomains.work',
+  'https://a.kutuzova.mesto.students.nomoredomains.work',
 ];
 
 const cors = (req, res, next) => {
