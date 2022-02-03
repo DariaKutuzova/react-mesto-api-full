@@ -211,6 +211,7 @@ function App() {
                 setIsLoggedIn(true);
                 setIsAuthorizedEmail(email)
                 navigate('/');
+                console.log('ok')
             })
             .catch((err) => {
                 if (err===Number(400)) {
