@@ -1,6 +1,6 @@
 {
-  "homepage": "https://dariakutuzova.github.io/react-mesto-auth/",
-  "name": "react-mesto-auth",
+  "homepage": "https://dariakutuzova.github.io/",
+  "name": "react-mesto-api-full",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,7 +16,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "npm run build && scp -r ./build/* dariakutuzova94@130.193.51.43:/home/dariakutuzova94/react-mesto-api-full/frontend",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "./node_modules/.bin/jest",

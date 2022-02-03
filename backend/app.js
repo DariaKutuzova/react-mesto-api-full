@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const { errors } = require('celebrate');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
@@ -23,6 +24,22 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
 }, (err) => {
   if (err) { console.log(err); }
 });
+
+const corsConfig = {
+  origin: [
+    'http://localhost:3000',
+    'http://kutuzova.mesto.students.nomoredomains.work',
+    'https://kutuzova.mesto.students.nomoredomains.work',
+  ],
+  methods: ['OPTIONS', 'GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+  preflightContinue: false,
+  optionsSuccessStatus: 204,
+  allowedHeaders: ['Content-Type', 'origin', 'Authorization', 'Cookie'],
+  exposedHeaders: ['Set-Cookie'],
+  credentials: true,
+};
+
+app.use('*', cors(corsConfig));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
