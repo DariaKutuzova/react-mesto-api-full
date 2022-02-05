@@ -9,7 +9,7 @@ function Register({isOpen, onClose, onAddUser}) {
         <p
             className="sign__description"
         >
-            Уже зарегистрированы? <Link className="sign__link" to="/sign-in">Войти</Link>
+            Уже зарегистрированы? <Link className="sign__link" to="/signin">Войти</Link>
         </p>
     )
 

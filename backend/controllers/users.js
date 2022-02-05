@@ -115,7 +115,6 @@ const patchAvatar = (request, response, next) => {
 
 const login = (req, res, next) => {
   const { email, password } = req.body;
-  const { origin } = req.headers;
 
   return User.findUserByCredentials(email, password)
     .then((user) => {
@@ -131,7 +130,6 @@ const login = (req, res, next) => {
           maxAge: 3600000 * 24 * 7,
           httpOnly: true,
           sameSite: true,
-          domain: origin,
         })
         .send({ message: 'Успешная авторизация' });
     })

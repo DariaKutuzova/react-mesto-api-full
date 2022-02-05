@@ -167,7 +167,7 @@ function App() {
             .then(
                 () => {
                     setIsRegistered(true);
-                    navigate('/sign-in');
+                    navigate('/signin');
                 })
             .catch((err) => {
                 console.log(err);
@@ -200,7 +200,7 @@ function App() {
     function handleLogout() {
         localStorage.removeItem('jwt')
         setIsLoggedIn(false)
-        navigate('/sign-in')
+        navigate('/signin')
     }
 
     //Функция входа
@@ -231,11 +231,11 @@ function App() {
                     onSingOut={handleLogout}
                 />
                 <Routes>
-                    <Route path="/sign-up" element={
+                    <Route path="/signup" element={
                         <Register
                             onAddUser={handleSignUp}
                         />}/>
-                    <Route path="/sign-in" element={
+                    <Route path="/signin" element={
                         <Login
                             onEntryUser={handleAuthorize}
                         />}/>

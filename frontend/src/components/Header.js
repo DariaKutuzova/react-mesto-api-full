@@ -45,10 +45,10 @@ function Header({loggedIn, onSingOut, autoEmail}) {
                 )}
             {!loggedIn && (
                 <p>
-                    {address.pathname === '/sign-in' &&
-                    (<Link className="header__link" to="/sign-up">Регистрация</Link>)}
-                    {address.pathname === '/sign-up' &&
-                    (<Link className="header__link" to="/sign-in">Войти</Link>)}
+                    {address.pathname === '/signin' &&
+                    (<Link className="header__link" to="/signup">Регистрация</Link>)}
+                    {address.pathname === '/signup' &&
+                    (<Link className="header__link" to="/signin">Войти</Link>)}
                 </p>
             )}
             </div>
