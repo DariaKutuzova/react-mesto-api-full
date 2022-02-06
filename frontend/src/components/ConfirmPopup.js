@@ -16,6 +16,7 @@ function ConfirmPopup({card, isOpen, onClose, onCardDelete}) {
         <PopupWithForm
             name={'confirm'}
             title={'Вы уверены?'}
+            buttonText={'Да'}
             isOpen={isOpen}
             onClose={onClose}
             onSubmit={handleSubmit}

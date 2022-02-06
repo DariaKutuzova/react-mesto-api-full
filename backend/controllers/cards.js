@@ -29,7 +29,8 @@ const deleteCard = (request, response, next) => {
 
 const createCard = (request, response, next) => {
   const { name, link } = request.body;
-  Card.create({ name, link, owner: { _id: request.user._id } })
+  Card.create({ name, link, owner: request.user._id })
+    .populate('owner')
     .then((card) => {
       response.send({ data: card });
     })
