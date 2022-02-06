@@ -1,5 +1,5 @@
-// export const BASE_URL = 'https://a.kutuzova.mesto.students.nomoredomains.work'
-export const BASE_URL = 'http://localhost:3001'
+export const BASE_URL = 'https://a.kutuzova.mesto.students.nomoredomains.work'
+// export const BASE_URL = 'http://localhost:3001'
 
 function handleResponse(res) {
     if (res.ok) {

@@ -104,8 +104,8 @@ class Api{
 
 //Экземпляр API
 const api = new Api({
-    // url: "https://a.kutuzova.mesto.students.nomoredomains.work/",
-    url: "http://localhost:3001/",
+    url: "https://a.kutuzova.mesto.students.nomoredomains.work/",
+    // url: "http://localhost:3001/",
     headers: {
         "content-type": "application/json"
     }
