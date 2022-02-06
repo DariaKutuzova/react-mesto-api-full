@@ -37,14 +37,14 @@ function App() {
     const navigate = useNavigate()
 
     useEffect(() => {
-        Promise.all([api.getAllCards(), api.getApiUserInfo()])
-            .then(([allCards, userData]) => {
-                setIsCurrentUser(userData);
-                setIsCards(allCards);
-            })
-            .catch((err) => {
-                console.log(`${err}`);
-            });
+        // Promise.all([api.getAllCards(), api.getApiUserInfo()])
+        //     .then(([allCards, userData]) => {
+        //         setIsCurrentUser(userData);
+        //         setIsCards(allCards);
+        //     })
+        //     .catch((err) => {
+        //         console.log(`${err}`);
+        //     });
         const close = (e) => {
             if (e.key === 'Escape') {
                 closeAllPopups();
@@ -60,7 +60,13 @@ function App() {
 
     useEffect(() => {
         if (loggedIn === true) {
-            navigate('/')
+            navigate('/');
+            Promise.all([api.getAllCards(), api.getApiUserInfo()])
+                .then(([allCards, userData]) => {
+                    setIsCurrentUser(userData);
+                    setIsCards(allCards);
+                })
+                .catch((err) => console.log(`${err}`));
         }
     }, [loggedIn, navigate])
 
@@ -208,15 +214,16 @@ function App() {
         auth.authorize(email, password)
             .then((data) => {
                 localStorage.setItem('jwt', data.token);
+                handleTokenCheck();
                 setIsLoggedIn(true);
                 setIsAuthorizedEmail(email)
                 navigate('/');
                 console.log('ok')
             })
             .catch((err) => {
-                if (err===Number(400)) {
+                if (err === Number(400)) {
                     alert('Не заполнено одно из полей')
-                } else if (err===Number(401)) {
+                } else if (err === Number(401)) {
                     alert('Неправильно введен логин или пароль')
                 }
             })

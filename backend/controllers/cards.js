@@ -31,7 +31,10 @@ const createCard = (request, response, next) => {
   const { name, link } = request.body;
   console.log(request.body);
   Card.create({ name, link, owner: request.user._id })
-    .then((card) => response.send({ data: card }))
+    .then((card) => {
+      console.log({ data: card });
+      response.send({ data: card });
+    })
     .catch((err) => {
       if (err.name === 'ValidationError') {
         next(new BadRequestError(`${Object.values(err.errors).map((error) => error.message).join(', ')}`));
