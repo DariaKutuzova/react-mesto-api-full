@@ -120,7 +120,13 @@ const login = (req, res, next) => {
     .then((user) => {
       // создадим токен
       const token = jwt.sign(
-        user,
+        {
+          _id: user._id,
+          email: user.email,
+          name: user.name,
+          about: user.about,
+          avatar: user.avatar,
+        },
         'some-secret-key',
         { expiresIn: '7d' },
       );
