@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://a.kutuzova.mesto.students.nomoredomains.work'
+export const BASE_URL = 'https://a.kutuzova.mesto.students.nomoredomains.work'
 
 function handleResponse(res) {
     if (res.ok) {
