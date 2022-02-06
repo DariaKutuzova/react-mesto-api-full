@@ -18,7 +18,7 @@ export function register(email, password) {
         body: JSON.stringify({email, password})
     })
         .then(handleResponse)
-};
+}
 
 export function authorize(email, password) {
     return fetch(`${BASE_URL}/signin`, {
@@ -30,7 +30,7 @@ export function authorize(email, password) {
         body: JSON.stringify({email, password})
     })
         .then(handleResponse)
-};
+}
 
 export function checkToken(jwt) {
     return fetch(`${BASE_URL}/users/me`, {

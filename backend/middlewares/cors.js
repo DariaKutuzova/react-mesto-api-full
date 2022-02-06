@@ -2,11 +2,12 @@ const allowedCors = [
   'http://localhost:3000',
   'http://kutuzova.mesto.students.nomoredomains.work',
   'https://kutuzova.mesto.students.nomoredomains.work',
-  'http://a.kutuzova.mesto.students.nomoredomains.work',
-  'https://a.kutuzova.mesto.students.nomoredomains.work',
+  // 'http://a.kutuzova.mesto.students.nomoredomains.work',
+  // 'https://a.kutuzova.mesto.students.nomoredomains.work',
 ];
 
 const cors = (req, res, next) => {
+  console.log('!!!!!!!!!!!!!!!!!!!!!');
   const { origin } = req.headers;
   // Сохраняем источник запроса в переменную origin
   // проверяем, что источник запроса есть среди разрешённых
