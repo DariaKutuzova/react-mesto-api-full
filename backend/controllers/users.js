@@ -34,9 +34,24 @@ const getUser = (request, response, next) => {
     });
 };
 
-const getUserMe = (request, response) => {
-  const { user } = request;
-  return response.status(200).send(user);
+const getUserMe = (request, response, next) => {
+  const owner = request.user._id;
+
+  return User
+    .findById(owner)
+    .then((user) => {
+      if (!user) {
+        throw new NotFoundError('Нет пользователя с таким id');
+      }
+      return response.status(200).send(user);
+    })
+    .catch((err) => {
+      console.log(err.name);
+      if (err.name === 'CastError') {
+        next(new BadRequestError('Переданы некорректные данные'));
+      } else next(err);
+    });
+  // return response.status(200).send(user);
 };
 
 const createUser = (request, response, next) => {

@@ -29,22 +29,22 @@ function App() {
     const [isRegistered, setIsRegistered] = useState(false);
     const [authorizedEmail, setIsAuthorizedEmail] = useState('');
 
-    const [currentUser, setIsCurrentUser] = useState({avatar: '', name: '', about: ''})
-    ;
+    const [currentUser, setIsCurrentUser] = useState({avatar: '', name: '', about: ''});
+
     const [cards, setIsCards] = useState([]);
 
     const [loggedIn, setIsLoggedIn] = useState(false);
     const navigate = useNavigate()
 
     useEffect(() => {
-        // Promise.all([api.getAllCards(), api.getApiUserInfo()])
-        //     .then(([allCards, userData]) => {
-        //         setIsCurrentUser(userData);
-        //         setIsCards(allCards);
-        //     })
-        //     .catch((err) => {
-        //         console.log(`${err}`);
-        //     });
+        Promise.all([api.getAllCards(), api.getApiUserInfo()])
+            .then(([allCards, userData]) => {
+                setIsCurrentUser(userData);
+                setIsCards(allCards);
+            })
+            .catch((err) => {
+                console.log(`${err}`);
+            });
         const close = (e) => {
             if (e.key === 'Escape') {
                 closeAllPopups();
@@ -131,7 +131,9 @@ function App() {
     //Функция лайка карточки
     function handleCardLike(card) {
         // Снова проверяем, есть ли уже лайк на этой карточке
-        const isLiked = card.likes.some(i => i._id === currentUser._id);
+
+        const even = (like) => like === currentUser._id;
+        const isLiked = card.likes.some(even);
 
         // Отправляем запрос в API и получаем обновлённые данные карточки
         api.changeLikeCardStatus(card._id, isLiked)

@@ -29,10 +29,13 @@ const deleteCard = (request, response, next) => {
 
 const createCard = (request, response, next) => {
   const { name, link } = request.body;
-  Card.create({ name, link, owner: request.user._id })
-    .populate('owner')
+  Card
+    .create({ name, link, owner: request.user._id })
     .then((card) => {
-      response.send({ data: card });
+      card.populate('owner').execPopulate()
+        .then((populatedCard) => {
+          response.send(populatedCard);
+        });
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {
@@ -51,7 +54,11 @@ const setLike = (request, response, next) => {
       if (!card) {
         next(new NotFoundError('Карточка не найдена'));
       }
-      return response.status(200).send(card);
+      card.populate('owner').execPopulate()
+        .then((populatedCard) => {
+          response.send(populatedCard);
+        });
+      // return response.status(200).send(card);
     })
     .catch((err) => {
       if (err.name === 'CastError') {
@@ -71,7 +78,10 @@ const deleteLike = (request, response, next) => {
     { new: true },
   )
     .orFail(() => new NotFoundError('Карточка не найдена'))
-    .then((card) => response.status(200).send(card))
+    .then((card) => card.populate('owner').execPopulate()
+      .then((populatedCard) => {
+        response.send(populatedCard);
+      }))
     .catch((err) => {
       if (err.name === 'CastError') {
         next(new BadRequestError(`${Object.values(err.errors).map((error) => error.message).join(', ')}`));

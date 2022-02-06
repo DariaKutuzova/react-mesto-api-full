@@ -78,7 +78,7 @@ class Api{
     }
 //Добавить лайк
     addLike(id) {
-        return fetch(`${this._url}cards/likes/${id}`, {
+        return fetch(`${this._url}cards/${id}/likes`, {
             method: "PUT",
             headers: this._getHeaders(),
         }).then(this._checkResponse)
@@ -86,7 +86,7 @@ class Api{
 
     //Убрать лайк
     disLike(id) {
-        return fetch(`${this._url}cards/likes/${id}`, {
+        return fetch(`${this._url}cards/${id}/likes`, {
             method: "DELETE",
             headers: this._getHeaders(),
         }).then(this._checkResponse)
@@ -104,7 +104,8 @@ class Api{
 
 //Экземпляр API
 const api = new Api({
-    url: "https://a.kutuzova.mesto.students.nomoredomains.work/",
+    // url: "https://a.kutuzova.mesto.students.nomoredomains.work/",
+    url: "http://localhost:3001/",
     headers: {
         "content-type": "application/json"
     }

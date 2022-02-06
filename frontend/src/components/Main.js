@@ -7,6 +7,7 @@ function Main({onEditProfile, onAddPlace, onEditAvatar, onCardClick, cards, onCa
     //Подписываемся на контекст
     const currentUser = useContext(CurrentUserContext);
 
+
     return (
         <main className="content">
             <section className="profile page__item">
