@@ -49,7 +49,7 @@ class Api{
         })
             .then(this._checkResponse)
     }
-//Имя и работа с сервера в форму
+//Имя и работа с сервера
     getApiUserInfo() {
         return fetch(`${this._url}users/me`, {
             method: 'GET',

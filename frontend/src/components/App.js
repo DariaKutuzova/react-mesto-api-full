@@ -182,13 +182,12 @@ function App() {
     function handleTokenCheck() {
         const jwt = localStorage.getItem("jwt")
         if (jwt) {
-            // const jwt = localStorage.getItem("jwt")
             auth.checkToken(jwt)
                 .then((res) => {
                     console.log(res)
                     if (res) {
                         setIsLoggedIn(true)
-                        setIsAuthorizedEmail(res.data.email)
+                        setIsAuthorizedEmail(res.email)
                     }
                 })
                 .catch((err) => {
