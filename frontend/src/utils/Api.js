@@ -10,11 +10,19 @@ class Api{
         return Promise.reject('Произошла ошибка')
     }
 
+    _getHeaders() {
+        const jwt = localStorage.getItem("jwt");
+        return {
+            "Authorization" : `Bearer ${jwt}`,
+            ...this._headers
+        }
+    }
+
     //Рендер всех карточек на страницу с сервера
     getAllCards() {
         return fetch(`${this._url}cards/`, {
             method: 'GET',
-            headers: this._headers
+            headers: this._getHeaders()
         })
             .then(this._checkResponse)
     }
@@ -22,7 +30,7 @@ class Api{
     addCard(data) {
         return fetch(`${this._url}cards/`, {
             method: 'POST',
-            headers: this._headers,
+            headers: this._getHeaders(),
             body: JSON.stringify({
                 name: data.name,
                 link: data.link
@@ -34,7 +42,7 @@ class Api{
     changeAvatar(data) {
         return fetch(`${this._url}users/me/avatar`, {
             method: 'PATCH',
-            headers: this._headers,
+            headers: this._getHeaders(),
             body: JSON.stringify({
                 avatar: data.avatar
             })
@@ -45,7 +53,7 @@ class Api{
     getApiUserInfo() {
         return fetch(`${this._url}users/me`, {
             method: 'GET',
-            headers: this._headers,
+            headers: this._getHeaders(),
         })
             .then(this._checkResponse)
     }
@@ -53,7 +61,7 @@ class Api{
     patchUserInfo(data) {
         return fetch(`${this._url}users/me`, {
             method: 'PATCH',
-            headers: this._headers,
+            headers: this._getHeaders(),
             body: JSON.stringify({
                 name: data.name,
                 about: data.info
@@ -65,14 +73,14 @@ class Api{
     deleteCard(id) {
         return fetch(`${this._url}cards/${id}`, {
             method: "DELETE",
-            headers: this._headers,
+            headers: this._getHeaders(),
         }).then(this._checkResponse)
     }
 //Добавить лайк
     addLike(id) {
         return fetch(`${this._url}cards/likes/${id}`, {
             method: "PUT",
-            headers: this._headers,
+            headers: this._getHeaders(),
         }).then(this._checkResponse)
     }
 
@@ -80,7 +88,7 @@ class Api{
     disLike(id) {
         return fetch(`${this._url}cards/likes/${id}`, {
             method: "DELETE",
-            headers: this._headers,
+            headers: this._getHeaders(),
         }).then(this._checkResponse)
     }
 
@@ -95,11 +103,10 @@ class Api{
 }
 
 //Экземпляр API
-const api= new Api({
+const api = new Api({
     url: "https://a.kutuzova.mesto.students.nomoredomains.work/",
     headers: {
-        "content-type": "application/json",
-        authorization: "8bc97cc4-e8dd-4b97-8e8e-b29acddab317"
+        "content-type": "application/json"
     }
 });
 
