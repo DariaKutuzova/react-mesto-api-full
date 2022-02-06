@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c0c8bda-1fb9-4afe-b829-57c0766ae194" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/cors.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/cors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/error.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/request.log" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +40,7 @@
       <option name="presentableId" value="Default" />
       <updated>1644164497574</updated>
       <workItem from="1644164499599" duration="5768000" />
-      <workItem from="1644181043048" duration="538000" />
+      <workItem from="1644181043048" duration="1696000" />
     </task>
     <servers />
   </component>
