@@ -159,6 +159,7 @@ function App() {
     function handleAddPlaceSubmit(data) {
         api.addCard(data)
             .then((newCard) => {
+                console.log(newCard)
                 setIsCards([newCard, ...cards]);
                 closeAllPopups();
             })
@@ -190,7 +191,6 @@ function App() {
         if (jwt) {
             auth.checkToken(jwt)
                 .then((res) => {
-                    console.log(res)
                     if (res) {
                         setIsLoggedIn(true)
                         setIsAuthorizedEmail(res.email)
