@@ -24,7 +24,7 @@
     "deploy": "gh-pages -d build",
     "lint": "npx eslint .",
     "start": "node app.js",
-    "dev": "nodemon app.js 3001"
+    "dev": "nodemon app.js"
   },
   "devDependencies": {
     "eslint": "^8.6.0",
