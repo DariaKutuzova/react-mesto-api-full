@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c0c8bda-1fb9-4afe-b829-57c0766ae194" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/error.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/request.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/utils/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/utils/Api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/utils/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/utils/auth.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +40,16 @@
       <option name="presentableId" value="Default" />
       <updated>1644164497574</updated>
       <workItem from="1644164499599" duration="5768000" />
-      <workItem from="1644181043048" duration="1696000" />
+      <workItem from="1644181043048" duration="3078000" />
     </task>
+    <task id="LOCAL-00001" summary="ignore log">
+      <created>1644184429183</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1644184429183</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -58,5 +66,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ignore log" />
+    <option name="LAST_COMMIT_MESSAGE" value="ignore log" />
   </component>
 </project>

@@ -5,6 +5,8 @@ const NotFoundError = require('../errors/NotFoundError');
 const BadRequestError = require('../errors/BadRequestError');
 const ConflictError = require('../errors/ConflictError');
 
+const { JWT_SECRET, NODE_ENV } = process.env;
+
 const getUsers = (request, response, next) => User
   .find({})
   .then((users) => response.status(200).send(users))
@@ -142,7 +144,7 @@ const login = (req, res, next) => {
           about: user.about,
           avatar: user.avatar,
         },
-        'some-secret-key',
+        NODE_ENV === 'production' ? JWT_SECRET : 'some-secret-key',
         { expiresIn: '7d' },
       );
       // вернём токен
