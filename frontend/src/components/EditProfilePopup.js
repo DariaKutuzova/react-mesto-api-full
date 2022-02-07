@@ -72,7 +72,7 @@ function EditProfilePopup({isOpen, onClose, onUpdateUser}) {
             isOpen={isOpen}
             onClose={onClose}
             onSubmit={handleSubmit}
-            isDisabled={!inputValid.name || !inputValid.info}
+            isDisabled={(!inputValid.name && inputValues.info.length < 2) || (!inputValid.info && inputValues.name.length < 2)}
         >
             <input type="text" placeholder="Имя Фамилия" className={`popup__input popup__input_value_name 
             ${!inputValid.name && inputDirty.name ? 'popup__input_type_error'
