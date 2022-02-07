@@ -5,11 +5,8 @@
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.0",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-router": "^6.0.2",
     "react-router-dom": "^6.0.2",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
@@ -22,12 +19,6 @@
     "test": "./node_modules/.bin/jest",
     "update-snapshot": "jest --updateSnapshot",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [
@@ -42,7 +33,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.2.3",
     "jest-cli": "^27.4.5",
     "react-test-renderer": "^17.0.2"
   },
