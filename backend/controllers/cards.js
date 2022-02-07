@@ -4,9 +4,9 @@ const BadRequestError = require('../errors/BadRequestError');
 const ForbiddenError = require('../errors/ForbiddenError');
 
 const getCards = (request, response, next) => Card
-  .find({}).reverse()
+  .find({})
   .populate('owner')
-  .then((cards) => response.status(200).send(cards))
+  .then((cards) => response.status(200).send(cards.reverse()))
   .catch((err) => {
     if (err.name === 'CastError') {
       next(new BadRequestError(`${Object.values(err.errors).map((error) => error.message).join(', ')}`));
