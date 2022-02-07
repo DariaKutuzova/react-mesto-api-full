@@ -4,7 +4,7 @@ const BadRequestError = require('../errors/BadRequestError');
 const ForbiddenError = require('../errors/ForbiddenError');
 
 const getCards = (request, response, next) => Card
-  .find({})
+  .find({}).reverse()
   .populate('owner')
   .then((cards) => response.status(200).send(cards))
   .catch((err) => {
